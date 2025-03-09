@@ -1,3 +1,5 @@
+use employee
+
 -- 1. View all records
 
 Select * from employees;
@@ -75,12 +77,18 @@ select * from employees order by salary desc limit 5;
 
 -- 18. Find employees earning below the department average.
 
+select  e.* 
+from employees e
+where salary < (
+select avg(salary ) from employees where department=e.department )
+
 
 -- 19. Show the youngest employee in each department
 
 select Department,min(age) from employees group by Department
 
    --  OR
+   
 select  e.* 
 from employees e 
 where age=(select min(age) from employees where department=e.department)
@@ -88,13 +96,30 @@ order by department
 
 -- 20. Get the median salary.
 
-select median
+
 
 
 -- 21. List employees who have the same salary.
--- 22. Find employees who joined in the last 3 months (if there’s a join_date column).
--- 23. Rank employees by salary within each department.
--- 24. Calculate salary percentile for each employee.
--- 25.Identify salary gaps between departments.
+
+
+-- 22.Rank employees by salary within each department.
+
+
+-- 23.  Calculate salary percentile for each employee
+
+
+-- 24.Identify salary gaps between departments.
+
+select  department,
+max(salary)- min(salary) as salary_gap,
+max(salary) as highest_salary,
+min(salary) as lowest_salary
+from employees
+group by department;
+ 
+
+
+
+-- 25.
 
 
