@@ -1,9 +1,10 @@
 # Data-Analysis-Using-SQL
 
 
-# 📊 Employee Data Analysis using SQL  
+# 1. Employee Data Analysis using SQL  
 
-This repository contains several **data analysis projects using SQL**.  
+This repository contains several **data analysis projects using SQL**.
+
 The first project focuses on **Employee Data**, where we perform various SQL queries to analyze employee-related information.  
 
 ## 🔹 Project Highlights  
@@ -11,7 +12,7 @@ The first project focuses on **Employee Data**, where we perform various SQL que
 - ✅ Data insertion and management  
 - ✅ SQL queries for data analysis  
 
-## 📂 Folder Structure  
+### 📂 Folder Structure  
 EmployeeDataAnalysis/  
 │── 📁 Data Queries/  
 │   └── 📄 Employee_queries.sql  # SQL queries for data analysis  
