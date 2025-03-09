@@ -61,6 +61,40 @@ order by salary;
 
 select count(*) from employees where salary > 70000;
 
+-- 15. Find employees with the 2nd highest salary
 
+select * from employees order by salary desc limit 1 offset 1;
+
+-- 16. Get department-wise salary expenditure.
+
+select department,sum(salary) as SalaryExpenditure from employees group by Department order by salaryexpenditure;
+
+-- 17. Retrieve the top 5 highest-paid employees.
+
+select * from employees order by salary desc limit 5;
+
+-- 18. Find employees earning below the department average.
+
+
+-- 19. Show the youngest employee in each department
+
+select Department,min(age) from employees group by Department
+
+   --  OR
+select  e.* 
+from employees e 
+where age=(select min(age) from employees where department=e.department)
+order by department
+
+-- 20. Get the median salary.
+
+select median
+
+
+-- 21. List employees who have the same salary.
+-- 22. Find employees who joined in the last 3 months (if there’s a join_date column).
+-- 23. Rank employees by salary within each department.
+-- 24. Calculate salary percentile for each employee.
+-- 25.Identify salary gaps between departments.
 
 
