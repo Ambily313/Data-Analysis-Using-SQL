@@ -102,9 +102,12 @@ order by department
 -- 21. List employees who have the same salary.
 
 
+
 -- 22.Rank employees by salary within each department.
 
-
+ select *,dense_rank()  over(partition by department order by salary desc) as Emp_rank
+ from employees;
+ 
 -- 23.  Calculate salary percentile for each employee
 
 
