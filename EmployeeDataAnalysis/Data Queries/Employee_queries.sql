@@ -101,7 +101,18 @@ order by department
 
 -- 21. List employees who have the same salary.
 
-
+select 
+    Emp_id,
+    Emp_name,
+    Age,
+    Department,
+    Salary
+from (
+    select *, count(*) over (partition by  Salary) as same_salary_count
+    from employees
+) as subquery
+where same_salary_count > 1
+order by Salary, Emp_id;
 
 -- 22.Rank employees by salary within each department.
 
