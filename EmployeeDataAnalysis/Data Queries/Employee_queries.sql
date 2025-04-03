@@ -105,11 +105,15 @@ order by department
 
 -- 22.Rank employees by salary within each department.
 
- select *,dense_rank()  over(partition by department order by salary desc) as Emp_rank
+ select *, dense_rank()  over(partition by department order by salary desc) as Emp_rank
  from employees;
  
 -- 23.  Calculate salary percentile for each employee
 
+select
+    Emp_id,Emp_name,Age,Department,Salary,
+    ROUND(cume_dist() over (order by Salary) * 100, 2) as salary_percentile
+from employees;
 
 -- 24.Identify salary gaps between departments.
 
